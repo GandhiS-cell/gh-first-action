@@ -6,8 +6,10 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Install Dependencies
-        run: npm ci
+      - name: Install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
       - name: Deploy code
         run: echo "Building....."
   deploy:
@@ -15,17 +17,22 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Install Dependencies
-        run: npm ci
+      - name: Install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
       - name: Deploy code
         run: echo "Deploying....."
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
+      - name: Get code
         uses: actions/checkout@v3
-      - name: Install Dependencies
-        run: npm ci
+      - name: Install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
       - name: Deploy code
         run: echo "Testing....."
   
