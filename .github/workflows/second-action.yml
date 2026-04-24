@@ -9,7 +9,7 @@ jobs:
       - name: install nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
   test:
     needs: build
     runs-on: ubuntu-latest
