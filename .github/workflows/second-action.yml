@@ -1,14 +1,16 @@
 name: First Workflow
 on: push
 jobs:
-  first-job:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: |
-          echo "First command"
-          echo "Hello Gandhi"
-      - name: Print goodby
-        run:  |
-          echo "Done - bye"
-          echo "Second command"
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21
+      - name: install dependecies
+        run: npm ci
+      - name: Run tests
+        run: npm test
