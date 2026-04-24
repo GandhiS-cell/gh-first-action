@@ -1,0 +1,31 @@
+name: Deloyment Excercise
+on: push
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Deploy code
+        run: echo "Building....."
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Deploy code
+        run: echo "Deploying....."
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Deploy code
+        run: echo "Testing....."
+  
