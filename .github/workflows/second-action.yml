@@ -12,5 +12,15 @@ jobs:
           node-version: 18
       - name: install dependecies
         run: npm ci
-      - name: Run tests
-        run: npm test
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: |
+          echo "First command"
+          echo "Hello Gandhi"
+      - name: Print goodby
+        run:  |
+          echo "Done - bye"
+          echo "Second command"
