@@ -10,8 +10,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: install dependecies
-        run: npm ci
   test:
     needs: build
     runs-on: ubuntu-latest
